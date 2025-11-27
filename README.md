@@ -1,6 +1,6 @@
 # Emergent Multi-Agent Systems
 
-**An Autonomous World Engine where digital agents learn to run operations, supply chains, and robotics workflows through emergent behavior.**
+**A research and engineering project exploring continuous-learning, multi-agent ecosystems where complex behavior emerges naturally from simple interacting agents.**
 
 ## Overview
 
