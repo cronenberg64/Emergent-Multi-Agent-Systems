@@ -2,10 +2,16 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from src.core.world import World
 
+import os
+
 class Visualizer:
-    def __init__(self, world: World):
+    def __init__(self, world: World, output_dir: str = "."):
         self.world = world
+        self.output_dir = output_dir
         self.fig, self.ax = plt.subplots()
+        
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
 
     def draw(self):
         self.ax.clear()
@@ -32,7 +38,9 @@ class Visualizer:
         
         nx.draw(self.world.graph, pos, ax=self.ax, node_color=colors, with_labels=True, labels=labels)
         self.ax.set_title(f"Tick: {self.world.tick_count}")
-        self.fig.savefig(f"vis_tick_{self.world.tick_count:03d}.png")
+        
+        filepath = os.path.join(self.output_dir, f"vis_tick_{self.world.tick_count:03d}.png")
+        self.fig.savefig(filepath)
 
     def close(self):
         plt.close(self.fig)

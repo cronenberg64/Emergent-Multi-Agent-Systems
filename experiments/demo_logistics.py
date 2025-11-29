@@ -3,6 +3,12 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import time
 import random
+import sys
+import os
+
+# Add project root to path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from src.core.world import World
 from src.agents.physical import TruckAgent, WarehouseAgent
 from src.agents.abstract import TaskAgent
@@ -45,7 +51,7 @@ def run_demo():
     world.add_agent(task1) 
     world.connect_agents(task1.id, w1.id)
 
-    vis = Visualizer(world)
+    vis = Visualizer(world, output_dir="outputs")
     logger = MetricsLogger(filepath="outputs/demo_metrics.csv")
     
     print("Starting simulation...")

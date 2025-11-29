@@ -3,7 +3,7 @@ name = "emergent-mas"
 version = "0.1.0"
 description = "Emergent Multi-Agent Systems Simulation Engine"
 authors = [
-    {name = "User", email = "user@example.com"},
+    {name = "Cronenberg64", email = "user@example.com"},
 ]
 dependencies = [
     "numpy",
