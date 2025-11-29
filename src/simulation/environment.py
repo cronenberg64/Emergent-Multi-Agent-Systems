@@ -6,7 +6,7 @@ from src.agents.physical import TruckAgent, WarehouseAgent
 from src.agents.abstract import TaskAgent
 
 class LogisticsEnv(gym.Env):
-    def __init__(self, num_trucks: int = 3, num_warehouses: int = 5):
+    def __init__(self, num_trucks: int = 4, num_warehouses: int = 8):
         self.num_trucks = num_trucks
         self.num_warehouses = num_warehouses
         self.world = World()
